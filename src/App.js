@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './Components/Nav'
+import routes from './routes'
+import {withRouter} from 'react-router-dom'
+// import {matchPath} from 'react-router-dom'
 
-function App() {
+function App(props) {
+  // console.log(props)
+  // const {/} = props.location.pathname
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      {/* {props.location.pathname.Auth === props. ? <></> : <Nav/>} */}
+      {/* {matchPath(props.location.pathname, {path: '/'}) ? <></> : <Nav/> } */}
+      <Nav/>
+      {routes}
     </div>
   );
 }
