@@ -9,10 +9,10 @@ class Nav extends Component {
         
     }
     render(){
-        
+        console.log(this.props)
         return(
             <div>
-                {this.props.username}
+                <h1>{this.props.username}</h1>
                 <img src={this.props.profile_pic}/>
                  <Link to='/dashboard'>Home</Link>
                  <br/>

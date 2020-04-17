@@ -26,7 +26,7 @@ class Auth extends Component {
         }
 
         axios.post('/api/auth/login', body).then(res => {
-            updateUser(res.data)
+            this.props.updateUser(res.data)
             this.props.history.push('/dashboard')
         }).catch((err) => alert('could not log in'))
     }
@@ -38,12 +38,13 @@ class Auth extends Component {
         }
 
     axios.post('/api/auth/register', body).then(res => {
-        updateUser(res.data)
+        this.props.updateUser(res.data)
         this.props.history.push('/dashboard')
     }).catch((err) => alert('could not register'))
     }
 
     render(){
+        console.log(this.props)
         return(
             <div>
                 Auth.js

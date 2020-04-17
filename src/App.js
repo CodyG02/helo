@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Nav from './Components/Nav'
 import routes from './routes'
-// import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 // import {matchPath} from 'react-router-dom'
 
 function App(props) {
@@ -11,12 +11,11 @@ function App(props) {
   return (
     <div className="App">
       
-      {/* {props.location.pathname.Auth === props. ? <></> : <Nav/>} */}
+      {props.location.pathname === '/' ? null : <Nav/>}
       {/* {matchPath(props.location.pathname, {path: '/'}) ? <></> : <Nav/> } */}
-      <Nav/>
       {routes}
     </div>
   );
 }
 
-export default App;
+export default withRouter(App)
