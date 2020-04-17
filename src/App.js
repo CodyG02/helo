@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Nav from './Components/Nav'
 import routes from './routes'
-import {withRouter} from 'react-router-dom'
+// import {withRouter} from 'react-router-dom'
 // import {matchPath} from 'react-router-dom'
 
 function App(props) {
