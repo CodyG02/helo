@@ -6,15 +6,14 @@ class Nav extends Component {
     constructor(){
         super()
 
-        this.state = {
-            username: '',
-            profile_pic: ''
-        }
+        
     }
     render(){
         
         return(
             <div>
+                {this.props.username}
+                <img src={this.props.profile_pic}/>
                  <Link to='/dashboard'>Home</Link>
                  <br/>
                  <Link to='/new'>New Post</Link>
