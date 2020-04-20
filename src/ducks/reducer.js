@@ -8,7 +8,7 @@ const UPDATE_USER = 'UPDATE_USER'
 
 // clear user info builder
 
-export function updateUser(user_id, username, profile_pic){
+export function updateUser({user_id, username, profile_pic}){
     return {
         type: UPDATE_USER,
         payload: {
@@ -20,9 +20,10 @@ export function updateUser(user_id, username, profile_pic){
 }
 
 export default function reducer(state = initialState, action) {
-    switch(action.type){
+    const {type, payload} = action
+    switch(type){
         case UPDATE_USER:
-            return {...state, user_id: action.payload, username: action.payload, profile_pic: action.payload}
+            return {...state, ...payload}
     default:
     return initialState
 }

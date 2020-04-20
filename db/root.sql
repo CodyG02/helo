@@ -6,7 +6,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE posts(
-    id SERAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     title VARCHAR(45),
     img TEXT,
     content TEXT,

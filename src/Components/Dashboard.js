@@ -16,10 +16,23 @@ class Dashboard extends Component {
     resetSearch(){}
 
     render(){
-        return(
-            <div>Dashboard.js</div>
-        )
-    }
+        const mappedPost = this.state.posts.map(post => {
+            return <div>
+                {this.state.posts}
+                </div>
+        })
+            return(
+                <div>
+                <input placeholder='search'/>
+                <button>search</button>
+                <button>reset</button>
+                <input type='checkbox'/>
+                <br/>
+                Dashboard.js
+                    {mappedPost}
+                </div>
+                )
+            }
 }
 
 export default Dashboard

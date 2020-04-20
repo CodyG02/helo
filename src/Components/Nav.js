@@ -13,7 +13,9 @@ class Nav extends Component {
         return(
             <div>
                 <h1>{this.props.username}</h1>
-                <img src={this.props.profile_pic}/>
+                <br/>
+                <img src={this.props.profile_pic} alt='profile picture'/>
+                <br/>
                  <Link to='/dashboard'>Home</Link>
                  <br/>
                  <Link to='/new'>New Post</Link>
@@ -26,7 +28,12 @@ class Nav extends Component {
     }
 }
 
-const mapStateToProps = state => state
+const mapStateToProps = state => {
+return {
+    username: state.username,
+    profile_pic: state.profile_pic
+}
+}
 
 
 export default connect(mapStateToProps)(Nav)
