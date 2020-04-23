@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import axios from 'axios'
+import {connect} from 'react-redux'
 
 class Dashboard extends Component {
     constructor(){
@@ -11,14 +13,21 @@ class Dashboard extends Component {
         }
     }
 
-    getAllPosts(){}
+    componentDidMount(){
+        axios.get(`/api/posts/user_id?search=${this.state.search}&userPosts=${this.state.userPosts}`).then(res =>{
+            this.setState({
+                posts: res.data
+            })
+        })
+    }
 
     resetSearch(){}
 
     render(){
         const mappedPost = this.state.posts.map(post => {
             return <div>
-                {this.state.posts}
+                pst
+                {this.state.post}
                 </div>
         })
             return(
@@ -35,4 +44,10 @@ class Dashboard extends Component {
             }
 }
 
-export default Dashboard
+const mapStateToProps = state => {
+    return {
+        user_id: state.user_id
+    }
+}
+
+export default connect(mapStateToProps)(Dashboard)

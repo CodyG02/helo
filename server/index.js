@@ -20,7 +20,7 @@ app.use(session({
 app.post('/api/auth/register', authCtrl.register)
 app.post('/api/auth/login', authCtrl.login)
 
-// app.get('/api/posts/:userid', postCtrl)
+app.get('/api/posts/:user_id', postCtrl.getPosts)
 // app.post('/api/post/:userid', postCtrl)
 // app.get('/api/post/postid', postCtrl)
 
